@@ -61,7 +61,8 @@ export default class InfiniteScroll extends Vue {
   }
   handleScroll() {
     const { scrollTop } = this.$el;
-    this.firstIndex = Math.floor(scrollTop / this.itemHeight);
+    // 目前顯示到的 Index，加上頭保留一個
+    this.firstIndex = Math.floor(scrollTop / this.itemHeight) - 1;
   }
 }
 </script>
